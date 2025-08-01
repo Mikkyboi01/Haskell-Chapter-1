@@ -1,0 +1,26 @@
+module Main where
+
+-- Type Annotations
+myInt :: Int
+myInt = 42
+
+myFloat :: Double
+myFloat = 3.14
+
+myString :: String
+myString = "Haskell"
+
+myChar :: Char
+myChar = 'Z'
+
+myBool :: Bool
+myBool = True && False
+
+main :: IO ()
+main = do
+    putStrLn "Checking types and values:"
+    print myInt     -- Should be Int
+    print myFloat   -- Should be Double
+    print myString  -- Should be String
+    print myChar    -- Should be Char
+    print myBool    -- Should be Bool
