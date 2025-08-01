@@ -1,0 +1,20 @@
+-- Define the double function
+double :: Int -> Int
+double x = x * 2
+
+-- Define the increment function
+increment :: Int -> Int
+increment x = x + 1
+
+-- Use function composition to define doubleThenIncrement
+doubleThenIncrement :: Int -> Int
+doubleThenIncrement = increment . double
+
+-- Main function to test everything
+main :: IO ()
+main = do
+    let number = 5
+    putStrLn $ "Original number: " ++ show number
+    putStrLn $ "After double: " ++ show (double number)
+    putStrLn $ "After increment: " ++ show (increment number)
+    putStrLn $ "After doubleThenIncrement: " ++ show (doubleThenIncrement number)
