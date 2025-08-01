@@ -1,26 +1,98 @@
-module Main where
+-- HC2T1 - Task 1: Checking Types in GHCi
+-- Expected types:
+-- 42 :: Int
+-- 3.14 :: Double
+-- "Haskell" :: String
+-- 'Z' :: Char
+-- True && False :: Bool
 
--- Type Annotations
-myInt :: Int
-myInt = 42
+-- HC2T2 - Task 2: Function Type Signatures and Implementations
 
-myFloat :: Double
-myFloat = 3.14
+add :: Int -> Int -> Int
+add x y = x + y
 
-myString :: String
-myString = "Haskell"
+isEven :: Int -> Bool
+isEven x = x `mod` 2 == 0
 
-myChar :: Char
-myChar = 'Z'
+concatStrings :: String -> String -> String
+concatStrings a b = a ++ b
 
-myBool :: Bool
-myBool = True && False
+-- HC2T3 - Task 3: Immutable Variables
 
+myAge :: Int
+myAge = 25
+
+piValue :: Double
+piValue = 3.14159
+
+greeting :: String
+greeting = "Hello, Haskell!"
+
+isHaskellFun :: Bool
+isHaskellFun = True
+
+-- If you try to modify a variable like `myAge = 30` again, Haskell will raise an error
+-- because variables in Haskell are immutable by default.
+
+-- HC2T4 - Task 4: Converting Between Notations
+
+-- Prefix equivalents
+prefix1 = (+) 5 3
+prefix2 = (*) 10 4
+prefix3 = (&&) True False
+
+-- Infix equivalents
+infix1 = 7 + 2
+infix2 = 6 * 5
+infix3 = True && False
+
+-- HC2T5 - Task 5: Defining and Using Functions
+
+circleArea :: Float -> Float
+circleArea r = pi * r * r
+
+maxOfThree :: Int -> Int -> Int -> Int
+maxOfThree x y z = max x (max y z)
+
+-- HC2T6 - Task 6: Understanding Int vs Integer
+
+smallNumber :: Int
+smallNumber = 262
+
+bigNumber :: Integer
+bigNumber = 2127
+
+-- Evaluating `2^64 :: Int` in GHCi may result in an overflow
+-- Try: 2^64 :: Integer -- safer with Integer type
+
+-- HC2T7 - Task 7: Boolean Expressions
+
+trueAnd = True && True        -- True
+falseOr = False || False      -- False
+notFalse = not False          -- True
+comparison = 5 > 10           -- False
+
+-- Test section (optional)
 main :: IO ()
 main = do
-    putStrLn "Checking types and values:"
-    print myInt     -- Should be Int
-    print myFloat   -- Should be Double
-    print myString  -- Should be String
-    print myChar    -- Should be Char
-    print myBool    -- Should be Bool
+  print (add 3 5)
+  print (isEven 4)
+  print (concatStrings "Hello, " "World!")
+  print myAge
+  print piValue
+  print greeting
+  print isHaskellFun
+  print prefix1
+  print prefix2
+  print prefix3
+  print infix1
+  print infix2
+  print infix3
+  print (circleArea 5)
+  print (maxOfThree 5 9 2)
+  print smallNumber
+  print bigNumber
+  print trueAnd
+  print falseOr
+  print notFalse
+  print comparison
